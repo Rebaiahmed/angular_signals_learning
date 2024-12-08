@@ -1,0 +1,17 @@
+<div class="search-container">
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      (ngModelChange)="onSearchChange($event)"
+      placeholder="Search for products..."
+    />
+  </div>
+  
+  <div class="product-list">
+    <ul>
+      <li *ngFor="let product of filteredProducts()">
+        {{ product.name }} - ${{ product.price }}
+      </li>
+    </ul>
+  </div>
+  
